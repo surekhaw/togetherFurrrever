@@ -1,0 +1,39 @@
+{
+  "name": "hr-rpp30-mvp",
+  "version": "1.0.0",
+  "description": "saveTheBacon",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "webpack --mode development --watch",
+    "server-dev": "nodemon server/index.js",
+    "start": "npm run react-dev & npm run server-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surekhaw/togetherFurrever.git"
+  },
+  "author": "surekha weinberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surekhaw/togetherFurrever/issues"
+  },
+  "homepage": "https://github.com/surekhaw/togetherFurrever#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.7",
+    "nodemon": "^2.0.12",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
