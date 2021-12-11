@@ -6,7 +6,7 @@ const dogSchema = new mongoose.Schema({
   "AltBreedName" : String,
   "Temperment" : String,
   "Intelligence" : Number,
-}
+});
 
 const Dog = mongoose.model('Dog', dogSchema, 'dogs');
 

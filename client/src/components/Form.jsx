@@ -1,5 +1,4 @@
 import React from 'react';
-import dogs from '../../../database/dogs.json';
 
 class Form extends React.Component {
   constructor(props) {
@@ -42,7 +41,7 @@ class Form extends React.Component {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(this.state)
     })
-    .then(res => console.log(res));
+    .then(res => console.log(res.json));
     console.log('state', this.state);
     this.setState({
       userName: '',

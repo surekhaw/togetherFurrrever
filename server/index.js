@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const db = require('../database/index.js');
+const db = require('./database/index.js');
 const controller = require('./controllers/index.js');
 
 const app = express();
@@ -19,6 +19,7 @@ app.post('/match', bodyParser.json(), (req, res) => {
       console.log(err);
       res.status(500).end({error: err});
     } else {
+      console.log(data);
       res.status(200).json(data).end();
     }
   })
