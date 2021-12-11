@@ -22,13 +22,11 @@ app.post('/match', bodyParser.json(), (req, res) => {
     if (err) {
       console.log(err);
       res.status(500).end({error: err});
-    } else {
-      console.log('data', data.match[0]);
-      if (data.match[0].length > 0) {
+    } else if (data) {
+        console.log('data', data.match[0]);
         res.status(200).json(data.match[0]);
-      } else {
-        res.status(400).send('sorry, no matches');
-      }
+    } else {
+      res.status(404).end();
     }
   })
 });

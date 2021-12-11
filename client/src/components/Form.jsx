@@ -69,8 +69,9 @@ class Form extends React.Component {
           </div>
           <div>
             <label htmlFor='firstReasons'>Why? Please identify three attributes that makes this your favorite animal.
-              <input type='text' id='firstReasons' name='firstReasons' value={ this.state.firstReasons } onChange={ this.onChangeHandler }
-                required />
+              <input type='text' id='firstReasons' name='firstReasons'
+              pattern=".+?(?:[\s'].+?){2,}" value={ this.state.firstReasons }
+              onChange={ this.onChangeHandler } required />
             </label>
           </div>
           <div>
@@ -81,8 +82,9 @@ class Form extends React.Component {
           </div>
           <div>
             <label htmlFor='secondReasons'>Why? Please identify three attributes that makes this your favorite animal.</label>
-              <input type='text' id='secondReasons' name='secondReasons' value={ this.state.secondReasons } onChange={ this.onChangeHandler }
-                required />
+              <input type='text' id='secondReasons' name='secondReasons'
+              pattern=".+?(?:[\s'].+?){2,}" value={ this.state.secondReasons }
+              onChange={ this.onChangeHandler } required />
           </div>
           <div>
             <label htmlFor='petBreed'>What breed is your dog?

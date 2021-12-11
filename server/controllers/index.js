@@ -80,8 +80,13 @@ const addProfile = (profile, callback) => {
       callback(err);
     } else {
       console.log('dog', dog);
-      profile.petAttributes = dog[0].Temperment;
-      profile.petIQ = dog[0].Intelligence;
+      if (dog[0]) {
+        profile.petAttributes = dog[0].Temperment;
+        profile.petIQ = dog[0].Intelligence;
+      } else {
+        profile.petAttributes = null;
+        profile.petIQ = null;
+      }
       return Profile.findOneAndUpdate({ email: profile.email }, profile, { new: true, upsert: true }, (err, result) => {
         if (err) {
           callback(err);
@@ -98,7 +103,7 @@ const addProfile = (profile, callback) => {
                 }
               });
             }
-          })
+          });
         }
       });
     }
