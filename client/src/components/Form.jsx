@@ -16,33 +16,23 @@ class Form extends React.Component {
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
 
-  componentDidMount() {
-    var words = 'active, adaptable, adventurous, affectionate,aggressive, agile, alert, aloof, amiable, assertive,athletic, attentive, balanced, boisterous, bold, brave, bright,bubbly, calm, cat-like, cautious, charming, cheerful, clever,clownish, companionable, compassionate, confident, cooperative,courageous, curious, detached, determined, devoted, dignified,discerning, docile, dominant, eager, easygoing, energetic,engaging, enterprising, even-tempered, extroverted, faithful,familial, fast, fearless, feisty, fiesty, forgiving, friendly,fun-loving, generous, gentle, good-natured, good-tempered,happy, hard-working, hardy, high-strung, impetuous,independent, inquisitive, instinctual, intelligent, intense,joyful, keen, kind, lively, lovable, loving, loyal, merry,mischevious, nervous, noble, obedient, opinionated, optimistic,outgoing, patient, perceptive, playful, polite, powerful,primitive, protective, proud, quarrelsome, quick, strong,quiet, rational, reliable, reserved, reserverd, respectful,responsibe, responsive, robust, self-assured, self-confident,self-important, sensitive, serious, sociable, social,spirited, stable, steady, strong-willed, stubborn, sturdy, suspicious,sweet, sweet-tempered, swift, tenacious, territorial, thoughtful,tolerant, trainable, trusting, trustworthy, unflappable, vigilant,vocal, watchful, well-mannered, wild, willful'
-    console.log(words.split(',').length);
-  }
+  // componentDidMount() {
+  //   var words = 'active, adaptable, adventurous, affectionate,aggressive, agile, alert, aloof, amiable, assertive,athletic, attentive, balanced, boisterous, bold, brave, bright,bubbly, calm, cat-like, cautious, charming, cheerful, clever,clownish, companionable, compassionate, confident, cooperative,courageous, curious, detached, determined, devoted, dignified,discerning, docile, dominant, eager, easygoing, energetic,engaging, enterprising, even-tempered, extroverted, faithful,familial, fast, fearless, feisty, fiesty, forgiving, friendly,fun-loving, generous, gentle, good-natured, good-tempered,happy, hard-working, hardy, high-strung, impetuous,independent, inquisitive, instinctual, intelligent, intense,joyful, keen, kind, lively, lovable, loving, loyal, merry,mischevious, nervous, noble, obedient, opinionated, optimistic,outgoing, patient, perceptive, playful, polite, powerful,primitive, protective, proud, quarrelsome, quick, strong,quiet, rational, reliable, reserved, reserverd, respectful,responsibe, responsive, robust, self-assured, self-confident,self-important, sensitive, serious, sociable, social,spirited, stable, steady, strong-willed, stubborn, sturdy, suspicious,sweet, sweet-tempered, swift, tenacious, territorial, thoughtful,tolerant, trainable, trusting, trustworthy, unflappable, vigilant,vocal, watchful, well-mannered, wild, willful'
+  //   console.log(words.split(',').length);
+  // }
 
   onChangeHandler = (e) => {
     const target = e.target;
     const value = target.value;
     const name = target.name;
-    // if (name === 'firstReasons' || name === 'secondReasons') {
-    //   value = value.toLowerCase().split(', ');
-    // }
-
     this.setState({
       [name]: value
     });
-    // console.log(name, value);
   };
   onSubmitHandler = e => {
     e.preventDefault();
-    fetch('http://localhost:3000/match', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(this.state)
-    })
-    .then(res => console.log(res.json));
     console.log('state', this.state);
+    this.props.makeMatch(this.state);
     this.setState({
       userName: '',
       email: '',

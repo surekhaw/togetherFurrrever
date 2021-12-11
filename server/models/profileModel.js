@@ -9,11 +9,12 @@ const profileSchema = new mongoose.Schema({
   firstReasons: String,
   secondFavorite: String,
   secondReasons: String,
-  hasPet: Boolean,
-  petBreed: String
+  petBreed: String,
+  petAttributes: String,
+  petIQ: Number
 });
 
-const Profile = mongoose.model('Profile', profileSchema);
+const Profile = mongoose.model('Profile', profileSchema, 'profiles');
 
 
 module.exports = Profile;

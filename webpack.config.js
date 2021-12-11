@@ -12,17 +12,14 @@ module.exports = {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        // query: {
-        //   presets: ['env', 'react'],
-        // }
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   loader: 'file-loader',
-      //   options: {
-      //     name: '/public/icons/[name].[ext]'
-      //   }
-      // },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '/server/assets/images/[name].[ext]'
+        }
+      },
       // {
       //   test: /\.css$/,
       //   use: [
